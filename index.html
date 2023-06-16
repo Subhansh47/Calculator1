@@ -1,0 +1,101 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <style>
+        .box {
+            height: 730px;
+            width: 603px;
+            background-color: rgb(199, 195, 195);
+            border: solid 4px black;
+            border-radius: 5px black;
+            padding: 5px;
+            margin: 0 auto;
+        }
+
+        .box button {
+            width: 24.5%;
+            height: 108px;
+            padding: 5px;
+            margin: auto;
+            background-color: black;
+            font-size: 28px;
+            color: white;
+        }
+
+        .box input {
+            width: 100%;
+            font-size: 75px;
+            height: 182px;
+            text-align: right;
+        }
+
+        #clear {
+            width: 100%;
+        }
+
+        div {
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        div h1 {
+            font-size: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1> calculator</h1>
+        <div class="box">
+            <input type="text" placeholder="00" id="box1">
+            <br>
+            <button onclick="myfunc(1)">1</button>
+            <button onclick="myfunc(2)">2</button>
+            <button onclick="myfunc(3)">3</button>
+            <button onclick="myfunc('+')">+</button>
+            <br>
+            <button onclick="myfunc(4)">4</button>
+            <button onclick="myfunc(5)">5</button>
+            <button onclick="myfunc(6)">6</button>
+            <button onclick="myfunc('-')">-</button>
+            <br>
+            <button onclick="myfunc(7)">7</button>
+            <button onclick="myfunc(8)">8</button>
+            <button onclick="myfunc(9)">9</button>
+            <button onclick="myfunc('*')">*</button>
+            <br>
+            <button onclick="myfunc('/')">/</button>
+            <button onclick="myfunc(0)">0</button>
+            <button onclick="myfunc('.')">.</button>
+            <button onclick="show()">=</button>
+            <br>
+            <button id="clear" onclick="clr()">clear</button>
+        </div>
+    </div>
+</body>
+<script>
+    f = 0;
+    let total = "";
+    act = '';
+    function myfunc(i) {
+        total += i;
+        document.getElementById("box1").value = total;
+    }
+    function show() {
+
+        
+ 
+        let value = document.getElementById("box1").value ;
+        x = eval(value);
+        document.getElementById('box1').value = x;
+    }
+    function clr() {
+        total = 0;
+        document.getElementById("box1").value = 0;
+    }
+</script>
+</html>
